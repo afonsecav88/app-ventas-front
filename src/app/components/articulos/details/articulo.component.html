@@ -1,0 +1,29 @@
+<div class="container">
+    <h5 class="text-center ">Detalles del Árticulo en venta</h5>
+    <hr>
+    <br>
+    <div>
+        <!-- <div class=" card animated fast fadeIn "> -->
+        <div class="row">
+            <div class="col-md-6">
+                <img class="rounded float-left img-thumbnail zoom1 card"  [src]="getImagen(articulo.imagenPath) "
+                    [alt]="articulo.nombre " style=" width: 25rem; padding-right: 5px;">
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <br>
+                     <p><strong>Nombre: </strong>{{articulo.nombre}}</p>
+                    <p class="card-text "><strong>Descripción: </strong>{{articulo.descripcion}}</p>
+                    <p class="card-text "><strong>Precio: </strong>{{articulo.precio}}</p>
+                    <p class="card-text "><strong>Email del Propietario: </strong>{{articulo.contactoPropietario}} </p>
+                    <p class="card-text "><strong>Teléfono del Propietario: </strong>{{articulo.telefonoPropietario}} </p> 
+                    <br>                   
+                </div>
+              
+            </div>
+
+        </div>
+    </div>
+
+    <!-- </div> <br> -->
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+    <h5 class="text-center">Administra tus Artículos en Venta</h5>
+    <br>
+
+    <div *ngIf="isLoadding">
+        <h3 class="text-info error"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error de Conexión
+        </h3>
+        <h6 class="text-black error"> <code>Revise su conexión a Internet y actualice la página.</code></h6>
+        <br>
+        <img class="error" src="../../../assets/img-categorias/error.png" alt="">
+    </div>
+    <div class="card-columns">
+        <div class="card animated fast fadeIn zoom" *ngFor="let articulo of articulos; let i=index">
+            <img class="card-img-top " [src]="articlesService.getImagen(articulo.imagenPath)" [alt]="articulo.nombre">
+            <div class="card-body">
+                <!--Aqui empieza el dropdown-->
+                <div class="dropdown show">
+                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Administrar
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item pointer" (click)="editArticle(articulo.id)" > <i class="fas fa-edit text-success"> &nbsp; Editar</i> </a>
+                        <a class="dropdown-item pointer" (click)="deleteArticle(articulo.id)" ><i class="fas fa-trash-alt text-danger"> &nbsp; Eliminar</i> </a>
+                    </div>
+                </div> <br>
+                <!--Aqui termina el dropdown-->
+                <p class="card-text"> <strong>Nombre: </strong> {{articulo.nombre}}</p>
+                <p class="card-text"><strong>Descripción: </strong>{{articulo.descripcion}}</p>
+                  
+                
+                <!-- <button (click)="verDetalles(articulo.id)" class="btn btn-outline-primary btn-block"> Ver
+                    Más...</button> -->
+            </div>
+        </div>
+    </div> <br>
+</div>

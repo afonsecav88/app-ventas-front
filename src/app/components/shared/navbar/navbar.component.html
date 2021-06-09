@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active">
+        <img class="img-fluid zoom1 " src="/assets/logo.png" width="60" height="60" alt="">
+    </a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link text-uppercase  font-weight-bold " [routerLink]="['/home']"
+                    routerLinkActive="router-link-active">Compras & Ventas &nbsp; &nbsp; </a>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn btn-outline-info btn-sm border-0"><a class="nav-link"
+                        [routerLink]="['newArticle']" routerLinkActive="router-link-active"> <i
+                            class="fa fa-comments-dollar fa-lg text-white" aria-hidden="true"></i>&nbsp; Proponer un
+                        Artículo</a></button>
+            </li>&nbsp; &nbsp;
+
+            <li class="nav-item">
+                <button type="button" class="btn btn-outline-info btn-sm border-0"><a class="nav-link"
+                        [routerLink]="['home']" routerLinkActive="router-link-active"> <i
+                            class="fa fa-cart-plus fa-lg text-white" aria-hidden="true"></i>&nbsp; Artículos en
+                        Venta</a></button>
+            </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0 ">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                <li class="nav-item misArticulos" *ngIf="usersService.estaLogueado()">
+                    <button type="button" class="btn btn-outline-info btn-sm border-0"><a class="nav-link"
+                            [routerLink]="['user',usersService.getUser()]" routerLinkActive="router-link-active">
+                            <i class=" fa fa-hand-holding-usd fa-lg text-white" aria-hidden="true"></i>&nbsp; Mis
+                            Artículos en Venta</a></button>
+                </li>&nbsp;&nbsp;  
+
+                <li class="nav-item " *ngIf="usersService.estaLogueado()">
+                    <button type="button" class="btn btn-outline-info border-0 "><i
+                            class="fa fa-user-circle fa-lg text-white" aria-hidden="true"></i>&nbsp; &nbsp;
+                        {{usersService.getUsername()}}</button>
+
+                </li>&nbsp;&nbsp;&nbsp;
+
+                <li class="nav-item " *ngIf="usersService.estaLogueado()">
+                    <span class="badge badge-pill  btn btn-outline-secondary "><a (click)="usersService.logout()"
+                            class="nav-link text-light" [routerLink]="['login']"
+                            routerLinkActive="router-link-active"><i class="fa fa-arrow-circle-right fa-lg text-warning"
+                                aria-hidden="true"></i> &nbsp; Salir</a></span>
+                </li>&nbsp;
+
+                <li class="nav-item " *ngIf="!usersService.estaLogueado()">
+                    <span class="badge badge-pill btn btn-outline-secondary "><a class="nav-link text-light"
+                            [routerLink]="['register']" routerLinkActive="router-link-active"><i class="fa fa-user-alt"
+                                aria-hidden="true"></i> &nbsp; Registrarse</a></span>
+                </li>&nbsp;
+
+                <li class="nav-item" *ngIf="!usersService.estaLogueado()">
+                    <span class="badge badge-pill  btn btn-outline-secondary "><a class="nav-link text-light"
+                            [routerLink]="['login']" routerLinkActive="router-link-active"><i
+                                class="fa fa-door-open fa-lg text-warning" aria-hidden="true"></i> &nbsp;
+                            Entrar</a></span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

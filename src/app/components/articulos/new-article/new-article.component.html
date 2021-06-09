@@ -1,0 +1,39 @@
+<div class="container article">
+    <h4 class="text-center">Inserta los datos del árticulo que deseas vender</h4>
+    <hr>
+    <br>
+    <form [(formGroup)]="articleForm" (ngSubmit)="addArticle()">
+        <div class="form-group">
+            <label for="article">Nombre: </label>
+            <input formControlName="nombre" type="text" class="form-control" name="nombre" id="nombre" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="article">Descripcion: </label><br>
+            <textarea formControlName="descripcion" name="description" id="descripcion" cols="100" rows="2"
+                class="form-control" maxlength="200"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="article">Precio: </label>
+            <input formControlName="precio" type="number" class="form-control" name="precio" id="precio" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="article">Imagen: </label>
+            <input formControlName="imagen" accept="image/*" type="file" class="form-control" name="imagen" id="imagen" placeholder=""
+                (change)="getImage($event)">
+        </div>        
+
+        <div class="form-group">
+            <label for="article">Teléfono del propietario: </label>
+            <input formControlName="telefonoPropietario" type="number" class="form-control" name="telefonoPropietario"
+             id="telefonoPropietario" placeholder="">
+        </div>
+
+        <button [disabled]=" articleForm.invalid " type="submit " class="btn btn-primary ">Insertar
+            Árticulo
+        </button>
+
+    </form>
+       
+</div>
