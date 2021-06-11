@@ -1,8 +1,10 @@
 <div class="container article">
-    <h4 class="text-center">Inserta los datos del árticulo que deseas vender</h4>
+    <div class="row">
+        <div class="col-md-8">
+    <h5 class="text-center">Inserta los datos del árticulo que deseas vender</h5>
     <hr>
     <br>
-    <form [(formGroup)]="articleForm" (ngSubmit)="addArticle()">
+    <form [formGroup]="articleForm" (ngSubmit)="addArticle()">
         <div class="form-group">
             <label for="article">Nombre: </label>
             <input formControlName="nombre" type="text" class="form-control" name="nombre" id="nombre" placeholder="">
@@ -35,5 +37,7 @@
         </button>
 
     </form>
+    </div>
+</div>
        
 </div>

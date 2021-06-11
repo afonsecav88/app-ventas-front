@@ -1,38 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { ArticlesService} from '../../services/services.index';
-import { Articulo } from '../../Interfaces/articulo';
-import { Router } from '@angular/router';
-
-
+import {Component, OnInit} from '@angular/core';
+import {ArticlesService} from '../../services/services.index';
+import {Articulo} from '../../Interfaces/articulo';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
   isLoadding = false;
   articulos: Articulo[] = [];
 
-  constructor(private articlesService: ArticlesService,
-    private router: Router) {
-  }
+  constructor(private articlesService: ArticlesService, private router: Router) {}
 
   ngOnInit(): void {
-    this.articlesService.getArticulos()
-      .subscribe((data: Articulo[]) => {
+    this.articlesService.getArticulos().subscribe(
+      (data: Articulo[]) => {
         this.articulos = data;
-      }, err => {
+      },
+      (err) => {
         if (!err) {
-          this.isLoadding = true;}
-      });
+          this.isLoadding = true;
+        }
+      },
+    );
   }
 
+  getImagen(imagen: string) {
+    return this.articlesService.obtenerImagen(imagen);
+  }
 
   // navegando hacia el articulo (ver mas...)
   verDetalles(id: number): void {
     this.router.navigate(['/articulo', `${id}`]);
   }
 }
-

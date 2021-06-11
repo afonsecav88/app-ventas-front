@@ -10,7 +10,7 @@
     </div>
     <div class="card-columns">
         <div class="card animated fast fadeIn zoom " *ngFor="let articulo of articulos; let i=index">
-            <img class="card-img-top" [src]="articlesService.getImagen(articulo.imagenPath)" [alt]="articulo.nombre">
+            <img class="card-img-top" [src]="getImagen(articulo.imagenPath)" [alt]="articulo.nombre">
             <div class="card-body">
                 <p class="card-text"> <strong>Nombre: </strong> {{articulo.nombre}}</p>
                 <p class="card-text"><strong>Descripción: </strong>{{articulo.descripcion}}</p>

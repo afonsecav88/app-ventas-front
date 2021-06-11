@@ -31,15 +31,16 @@ export class ArticlesService {
     const url = `${this.urlArt}/findemail/${email}`;
     return this.http.get<Articulo[]>(url);
   }
+
   obtenerImagen(artImagen: string): string {
     const arr: string[] = artImagen.split('\\');
     const result = arr.pop();
     return `${this.urlImg + result}`;
   }
 
-  getImagen(artImagen: string): string {
-    return this.obtenerImagen(artImagen);
-  }
+  // getImagen(artImagen: string): string {
+  //   return this.obtenerImagen(artImagen);
+  // }
 
   getArticuloById(id: number): Observable<Articulo> {
     const url = `${this.urlArt}/${id}`;
