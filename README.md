@@ -1,6 +1,10 @@
 # CompraventaApp
 
 ### Aplicación de Angular que consume api de Asp.net Core, para hacer gestión de artículos, permite registro,login y manejo de sesiones de usuarios.
+- Uso de Angular.
+- Uso de Flexbox y Bootstrap.
+- Almacenamiento de token de usuario en LocalStorage.
+- Ngx-toastr
 
 ### Módulo de Crud de artículos
 - Formulario para añadir un artículo.
