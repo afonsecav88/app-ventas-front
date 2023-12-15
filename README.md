@@ -1,27 +1,20 @@
 # CompraventaApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+## Aplicación de Angular que consume api de Asp.net Core, para hacer gestión de artículos, permite registro,login y manejo de sesiones de usuarios.
 
-## Development server
+### Módulo de Crud de artículos
+- Formulario para añadir un artículo
+- Vista de los artículos del usuario
+- Vista de todos los artículos ,independientemente de que usuario los creo.
+- Vista de detalles de un artículo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Módulo de usuarios
+- Formulario de registro de usuario.
+- Formulario de login de usuario.
+- Cierre de sesion de usuario
 
-## Code scaffolding
+### Levantar la aplicación en desarrollo
+1. Para instalar dependencias de desarrollo ```npm install```
+2. Para levantar el server de desarrollo ```ng serve -o```
+3. Para hacer el build de la app ```ng build``` 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
